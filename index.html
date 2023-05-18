@@ -1,14 +1,19 @@
-<!--Make a simple hello page index.html -->
+<!--Make a simple hello page index.html using angular.js -->
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
-    <title>Index</title>
+    <title>Angular JS</title>
+    <script type="text/javascript" src="angular.min.js"></script>
 </head>
 <body>
-    <h1>Hello World!!</h1>
-    <p>My name is <strong>Sagar</strong></p>
-    <p>I am a <strong>Web Developer</strong></p>
-    <p>I finished my grduation from The Universtiy of Adelaide.</p>
-
+    <div ng-controller="myCtrl">
+        <h1>{{helloMessage}}</h1>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.helloMessage = "Hello World!";
+        });
+    </script>
 </body>
 </html>
